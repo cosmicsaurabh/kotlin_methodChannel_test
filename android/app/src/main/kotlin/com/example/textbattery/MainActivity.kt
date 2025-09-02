@@ -6,6 +6,7 @@ import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
 import com.example.textbattery.NetworkPlugin
+import com.example.textbattery.SensorPlugin
 
 class MainActivity: FlutterActivity() {
 
@@ -14,6 +15,7 @@ class MainActivity: FlutterActivity() {
 
        BatteryPlugin.registerWith(flutterEngine, this.applicationContext )
        NetworkPlugin.registerWith(flutterEngine, this.applicationContext )
+       SensorPlugin.registerWith(flutterEngine, this.applicationContext )
 
     }
 

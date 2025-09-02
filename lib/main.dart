@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:textbattery/battery.dart';
 import 'package:textbattery/network.dart';
+import 'package:textbattery/sensor.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,11 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   int _selectedIndex = 0;
 
-  static List<Widget> _widgetOptions = <Widget>[BatteryInfo(), NetworkInfo()];
+  static List<Widget> _widgetOptions = <Widget>[
+    BatteryInfo(),
+    NetworkInfo(),
+    SensorInfo(),
+  ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -42,6 +47,7 @@ class _MyAppState extends State<MyApp> {
               icon: Icon(Icons.network_wifi),
               label: 'Network',
             ),
+            BottomNavigationBarItem(icon: Icon(Icons.sensors), label: 'Sensor'),
           ],
           currentIndex: _selectedIndex,
           selectedItemColor: Colors.amber[800],
