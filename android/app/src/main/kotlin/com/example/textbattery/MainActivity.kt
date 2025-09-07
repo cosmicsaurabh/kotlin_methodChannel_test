@@ -16,6 +16,7 @@ class MainActivity: FlutterActivity() {
        BatteryPlugin.registerWith(flutterEngine, this.applicationContext )
        NetworkPlugin.registerWith(flutterEngine, this.applicationContext )
        SensorPlugin.registerWith(flutterEngine, this.applicationContext )
+        MsgPlugin.registerWith(flutterEngine)
 
     }
 
