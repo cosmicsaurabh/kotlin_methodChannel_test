@@ -7,6 +7,7 @@ import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
 import com.example.textbattery.NetworkPlugin
 import com.example.textbattery.SensorPlugin
+import com.example.textbattery.CoroutinePlugin
 
 class MainActivity: FlutterActivity() {
 
@@ -17,6 +18,7 @@ class MainActivity: FlutterActivity() {
        NetworkPlugin.registerWith(flutterEngine, this.applicationContext )
        SensorPlugin.registerWith(flutterEngine, this.applicationContext )
         MsgPlugin.registerWith(flutterEngine)
+        CoroutinePlugin.registerWith(flutterEngine)
 
     }
 
