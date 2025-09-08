@@ -24,7 +24,7 @@ class _MyAppState extends State<MyApp> {
     NetworkInfo(),
     SensorInfo(),
     BasicMessenger(),
-    CoroutinePlugin(),
+    CoroutineInfo(),
   ];
 
   void _onItemTapped(int index) {
