@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:textbattery/Coroutine.dart';
 import 'package:textbattery/battery.dart';
+import 'package:textbattery/msg.dart';
 import 'package:textbattery/network.dart';
 import 'package:textbattery/sensor.dart';
 
@@ -17,10 +19,12 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   int _selectedIndex = 0;
 
-  static List<Widget> _widgetOptions = <Widget>[
+  static final List<Widget> _widgetOptions = <Widget>[
     BatteryInfo(),
     NetworkInfo(),
     SensorInfo(),
+    BasicMessenger(),
+    CoroutinePlugin(),
   ];
 
   void _onItemTapped(int index) {
@@ -48,7 +52,16 @@ class _MyAppState extends State<MyApp> {
               label: 'Network',
             ),
             BottomNavigationBarItem(icon: Icon(Icons.sensors), label: 'Sensor'),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.message),
+              label: 'Message',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.calculate),
+              label: 'Coroutine',
+            ),
           ],
+          unselectedItemColor: Colors.grey,
           currentIndex: _selectedIndex,
           selectedItemColor: Colors.amber[800],
           onTap: _onItemTapped,
